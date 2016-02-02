@@ -44,7 +44,7 @@ require 'vendor/autoload.php';
 use Islandora\Chullo\Chullo;
 
 // Instantiated with static factory
-$chullo = Chullo::create(“http://localhost:8080/fcrepo/rest”);
+$chullo = Chullo::create('http://localhost:8080/fcrepo/rest');
 
 // Create a new resource
 $uri = $chullo->createResource(); // http://localhost:8080/fcrepo/rest/0b/0b/6c/68/0b0b6c68-30d8-410c-8a0e-154d0fd4ca20
