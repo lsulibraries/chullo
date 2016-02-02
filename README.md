@@ -39,6 +39,8 @@ Chullo is a PHP client for Fedora 4 built using Guzzle and EasyRdf.
 ###Fedora
 ```php
 <?php
+require 'vendor/autoload.php';
+
 use Islandora\Chullo\Chullo;
 
 // Instantiated with static factory
