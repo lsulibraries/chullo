@@ -13,18 +13,17 @@ Chullo is a PHP client for Fedora 4 built using Guzzle and EasyRdf.
 
 ## Installation
 
-1. `git clone git@github.com:Islandora-CLAW/chullo.git`
+1. `git clone https://github.com/Islandora-CLAW/chullo`
 2. `cd chullo`
-3. `php composer.phar install`
 
-You can also install with composer by pointing to your local clone. Just add these relevant bits to your `composer.json`:
+3. Edit /chullo/composer.json:
 
 ```
 {
     "repositories": [
         {
             "type": "vcs",
-            "url": "/path/to/chullo"
+            "url": "/path/to/chullo"  
         }
     ],
     "require": {
@@ -33,12 +32,13 @@ You can also install with composer by pointing to your local clone. Just add the
 }
 ```
 
-Then just `php composer.phar install` as usual.
+4. in bash /chullo/, do `composer install`
 
 ##Usage
 
 ###Fedora
 ```php
+<?php
 use Islandora\Chullo\Chullo;
 
 // Instantiated with static factory
@@ -82,11 +82,13 @@ $chullo->commitTransaction($transaction);
 
 // Check it out:
 echo $uri . "\n";
+?>
 ```
 
 ### Triplestore
 
 ```php
+<?php
 use Islandora\Chullo\TriplestoreClient;
 
 $triplestore = TriplestoreClient::create('http://127.0.0.1:8080/bigdata/namespace/kb/sparql/');
@@ -106,6 +108,7 @@ $results = $triplestore->query($sparql);
 foreach ($results as $triple) {
     echo $triple->s . "\n";
 }
+?>
 ```
 
 ## Maintainers/Sponsors
